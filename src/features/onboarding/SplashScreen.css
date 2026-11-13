@@ -1,0 +1,74 @@
+.splash {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background: var(--color-bg-dark);
+}
+.splash__wrapper {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--gap-md) var(--margin-small);
+}
+.splash__indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.splash__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+}
+.splash__letters {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  color: var(--color-logo);
+}
+.splash__letter {
+  margin-right: -2px;
+  animation: splash-letter-opacity 2s both, splash-letter-drop 2s both;
+}
+.splash__letter:last-child { margin-right: 0; }
+.splash__letter--trace {
+  font-style: italic;
+  animation-name: splash-letter-opacity-late, splash-letter-drop-late;
+}
+.splash__tagline {
+  color: var(--color-content-inverse-base);
+  animation: splash-tagline 2s both;
+}
+
+/* Timings from Figma motion: 2s timeline, played once. */
+@keyframes splash-letter-drop {
+  0% { transform: translateY(-40px); animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+  25%, 100% { transform: translateY(0); }
+}
+@keyframes splash-letter-opacity {
+  0% { opacity: 0; animation-timing-function: ease-out; }
+  20%, 100% { opacity: 1; }
+}
+@keyframes splash-letter-drop-late {
+  0%, 15% { transform: translateY(-40px); animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+  40%, 100% { transform: translateY(0); }
+}
+@keyframes splash-letter-opacity-late {
+  0%, 15% { opacity: 0; animation-timing-function: ease-out; }
+  35%, 100% { opacity: 1; }
+}
+@keyframes splash-tagline {
+  0%, 66% { opacity: 0; transform: translateY(8px); animation-timing-function: ease-out; }
+  88.5%, 100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash__letter,
+  .splash__tagline { animation: none; }
+}

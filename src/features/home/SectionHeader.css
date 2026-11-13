@@ -1,0 +1,12 @@
+.section-header { display: flex; align-items: center; gap: var(--gap-md); width: 100%; }
+.section-header__title { flex: 1 0 0; color: var(--color-content-strongest); }
+.section-header__link {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-content-light);
+  white-space: nowrap;
+}
+.section-header__link img { width: var(--icon-size-md); height: var(--icon-size-md); }

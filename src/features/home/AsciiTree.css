@@ -1,0 +1,22 @@
+.ascii-tree {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  height: 140px;
+}
+.ascii-tree__clip {
+  position: absolute;
+  bottom: -3px;
+  left: calc(50% - 2px);
+  width: 142.835px;
+  height: 194px;
+  transform: translateX(-50%);
+  overflow: clip;
+}
+.ascii-tree__frame {
+  position: absolute;
+  margin: 0;
+  font-family: var(--font-mono);
+  color: var(--color-content-ascii);
+  white-space: pre;
+}

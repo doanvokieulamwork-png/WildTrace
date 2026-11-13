@@ -1,0 +1,24 @@
+.map-illustration {
+  flex: 1 0 0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+}
+.map-illustration__stack {
+  position: relative;
+  width: 236px;
+  height: 300px;
+}
+.map-illustration__layer {
+  width: 236px;
+  height: 300px;
+  max-width: none;
+  object-position: bottom;
+}
+.map-illustration__layer--top {
+  position: absolute;
+  left: 0;
+  top: -167px;
+}

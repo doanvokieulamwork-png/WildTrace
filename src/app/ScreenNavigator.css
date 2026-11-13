@@ -1,0 +1,119 @@
+/* Showcase tool — sits outside the phone frame, never part of a screen transition. */
+.screen-nav {
+  position: fixed;
+  top: var(--pad-xl);
+  left: var(--pad-xl);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-xs);
+  width: 200px;
+  user-select: none;
+  view-transition-name: screen-nav;
+}
+
+.screen-nav__toggle {
+  border: 0;
+  border-radius: var(--radius-full);
+  padding: var(--pad-2xs) var(--pad-sm);
+  background: var(--color-bg-surface);
+  color: var(--color-content-strongest);
+  box-shadow: var(--shadow-action-basic);
+}
+
+.screen-nav__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  width: 100%;
+  max-height: calc(100dvh - 2 * var(--pad-xl) - var(--btn-size-md));
+  overflow-y: auto;
+  padding: var(--pad-md);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-canvas);
+  box-shadow: var(--shadow-action-basic);
+}
+
+.screen-nav__steps {
+  display: flex;
+  gap: var(--gap-xs);
+}
+
+.screen-nav__step {
+  flex: 1;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--pad-2xs) var(--pad-xs);
+  background: var(--color-bg-surface);
+  color: var(--color-content-strongest);
+}
+
+.screen-nav__step:disabled {
+  color: var(--color-content-disabled);
+  cursor: default;
+}
+
+.screen-nav__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2xs);
+}
+
+.screen-nav__title {
+  margin: 0;
+  color: var(--color-content-light);
+}
+
+.screen-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.screen-nav__item {
+  width: 100%;
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: var(--pad-2xs) var(--pad-xs);
+  background: transparent;
+  color: var(--color-content-base);
+  text-align: left;
+}
+
+.screen-nav__item:hover {
+  background: var(--color-bg-neutral-subtle);
+}
+
+.screen-nav__item[aria-current='page'] {
+  background: var(--color-accent);
+  color: var(--color-accent-content);
+}
+
+.screen-nav__hint {
+  color: var(--color-content-light);
+}
+
+/* Phones: a small toggle in the corner, panel opens over the app */
+@media (max-width: 500px) {
+  .screen-nav {
+    top: auto;
+    bottom: var(--pad-2xl);
+    left: auto;
+    right: var(--pad-xs);
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .screen-nav__toggle {
+    opacity: 0.6;
+  }
+  .screen-nav--open .screen-nav__toggle {
+    opacity: 1;
+  }
+  .screen-nav__panel {
+    max-height: 70dvh;
+  }
+}

@@ -23,7 +23,7 @@ type GoOptions = {
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-/** True while a screen transition runs: blocks double taps / swipe + tap from skipping screens. */
+/** True while an animated transition runs: blocks double taps / swipe + tap from skipping screens. */
 let busy = false
 
 /**
@@ -36,13 +36,13 @@ export function useScreenNavigate() {
   const navigate = useNavigate()
   return useCallback(
     (to: string, { transition = 'dissolve', durationMs = transitionMs.dissolve, replace = false }: GoOptions = {}) => {
-      if (busy) return
       const animate =
         transition !== 'none' && !prefersReducedMotion() && typeof document.startViewTransition === 'function'
       if (!animate) {
         void navigate(to, { replace })
         return
       }
+      if (busy) return
       busy = true
       const root = document.documentElement
       root.dataset.screenTransition = transition

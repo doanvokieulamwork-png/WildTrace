@@ -135,6 +135,11 @@ Rules:
   keep the bundle small.
 - Shared components already available: `StatusBar`, `BottomIndicator`, `PrimaryButton`,
   `ControlFooter` (in `src/components/`).
+- Screen navigator (showcase tool, `src/app/ScreenNavigator.tsx`): a "Screens" panel next to
+  the phone to jump to any screen or step Back / Next (← / → keys). When you add screens,
+  list them in `src/app/screens.ts` in flow order.
+- Screen transitions: navigate with `useScreenNavigate()` (`src/app/`) and pick the Figma
+  transition (`dissolve`, `slide-next`, `slide-prev`) and duration.
 
 ## 6. Git workflow
 

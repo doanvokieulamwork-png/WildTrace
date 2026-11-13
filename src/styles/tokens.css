@@ -95,6 +95,11 @@
   --home-indicator-height: 4px;
   --tab-bar-height: 89px;
 
+  /* Motion — Figma prototype easings (durations live in src/app/useScreenNavigate.ts) */
+  --ease-gentle: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --screen-transition-duration: 1022ms;
+
   /* Typography — families */
   --font-heading: 'STIX Two Text', Georgia, serif;
   --font-sans: 'Instrument Sans', system-ui, sans-serif;

@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useScreenNavigate, type ScreenTransition } from '../../app/useScreenNavigate'
 
-/** Navigates to `to` after `delayMs` (used by the splash screens). */
-export function useAutoAdvance(to: string, delayMs: number) {
-  const navigate = useNavigate()
+/** Navigates to `to` after `delayMs` (Figma "After delay" reactions on the splash screens). */
+export function useAutoAdvance(to: string, delayMs: number, transition: ScreenTransition = 'none', durationMs?: number) {
+  const go = useScreenNavigate()
   useEffect(() => {
-    const id = window.setTimeout(() => navigate(to, { replace: true }), delayMs)
+    const id = window.setTimeout(() => go(to, { transition, durationMs, replace: true }), delayMs)
     return () => window.clearTimeout(id)
-  }, [navigate, to, delayMs])
+  }, [go, to, delayMs, transition, durationMs])
 }

@@ -1,7 +1,6 @@
 .welcome {
   position: relative;
   height: 100%;
-  min-height: var(--viewport-height);
   background: linear-gradient(var(--color-bg-brand-tint), var(--color-bg-brand-tint)), var(--color-bg-canvas);
 }
 .welcome__image {

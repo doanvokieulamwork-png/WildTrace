@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { ControlFooter } from '../../components/ControlFooter'
 import { PrimaryButton } from '../../components/PrimaryButton'
 import { StatusBar } from '../../components/StatusBar'
+import { useSwipe } from './useSwipe'
 import './OnboardingStep.css'
 
 type OnboardingStepProps = {
@@ -12,12 +13,24 @@ type OnboardingStepProps = {
   illustration: ReactNode
   onNext: () => void
   onSkip: () => void
+  onSwipeNext: () => void
+  onSwipePrev: () => void
 }
 
 /** Shared layout for Onboarding 1–3 (Figma 4022:17887 / 18176 / 17914). */
-export function OnboardingStep({ progressInset, title, body, illustration, onNext, onSkip }: OnboardingStepProps) {
+export function OnboardingStep({
+  progressInset,
+  title,
+  body,
+  illustration,
+  onNext,
+  onSkip,
+  onSwipeNext,
+  onSwipePrev,
+}: OnboardingStepProps) {
+  const swipe = useSwipe({ onSwipeLeft: onSwipeNext, onSwipeRight: onSwipePrev })
   return (
-    <div className="onboarding-step">
+    <div className="onboarding-step" {...swipe}>
       <div className="onboarding-step__top-nav">
         <StatusBar tone="dark" />
       </div>

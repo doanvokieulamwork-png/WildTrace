@@ -1,5 +1,6 @@
 import { BottomIndicator } from '../../components/BottomIndicator'
 import { StatusBar } from '../../components/StatusBar'
+import { transitionMs } from '../../app/useScreenNavigate'
 import { useAutoAdvance } from './useAutoAdvance'
 import './SplashScreen.css'
 
@@ -8,7 +9,7 @@ const TRACE = ['T', 'r', 'a', 'c', 'e']
 
 /** Splash 2 — animated WildTrace logo (Figma 4022:18207). */
 export function LogoSplashScreen() {
-  useAutoAdvance('/onboarding/1', 2800)
+  useAutoAdvance('/onboarding/1', 3500, 'dissolve', transitionMs.dissolve)
   return (
     <div className="splash">
       <StatusBar tone="light" />

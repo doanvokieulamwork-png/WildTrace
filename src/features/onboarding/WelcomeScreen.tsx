@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom'
 import photo from '../../assets/flow1/welcome-photo.jpg'
+import { useScreenNavigate } from '../../app/useScreenNavigate'
 import { ControlFooter } from '../../components/ControlFooter'
 import { PrimaryButton } from '../../components/PrimaryButton'
 import { StatusBar } from '../../components/StatusBar'
@@ -8,7 +8,7 @@ import './WelcomeScreen.css'
 
 /** Welcome to WildTrace (Figma 4022:18159). */
 export function WelcomeScreen() {
-  const navigate = useNavigate()
+  const go = useScreenNavigate()
   return (
     <div className="welcome">
       <div className="welcome__image">
@@ -27,7 +27,7 @@ export function WelcomeScreen() {
       </div>
       <div className="welcome__control">
         <ControlFooter>
-          <PrimaryButton onClick={() => navigate('/home', { replace: true })}>Start Exploring</PrimaryButton>
+          <PrimaryButton onClick={() => go('/home', { replace: true })}>Start Exploring</PrimaryButton>
         </ControlFooter>
       </div>
     </div>

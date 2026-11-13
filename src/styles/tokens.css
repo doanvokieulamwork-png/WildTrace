@@ -1,0 +1,94 @@
+/*
+ * Design tokens — mirrored from Figma variables
+ * (Odd Side Good Vibe – Final Presentation, page "Test").
+ * Do NOT hardcode colors/spacing/typography in components; use these vars.
+ * When Figma changes, update this file first.
+ */
+:root {
+  /* Color — background */
+  --color-bg-canvas: #f9f7f4;
+  --color-bg-surface: #ffffff;
+  --color-bg-neutral-subtle: #623e0215;
+  --color-bg-neutral-flat: #ffffff00;
+  --color-bg-dark: #352b18;
+
+  /* Color — content */
+  --color-content-strongest: #352b18;
+  --color-content-base: #1b1000b3;
+  --color-content-light: #2e1b0096;
+  --color-content-placeholder: #3f260051;
+  --color-content-disabled: #3f260051;
+  --color-content-inverse: #ffffff;
+  --color-label-primary: #000000;
+
+  /* Color — border */
+  --color-border-subtle: #56330124;
+  --color-border-active-subtle: #502e012d;
+  --color-border-inverse: #ffffff;
+
+  /* Color — brand / buttons */
+  --color-accent: #ffdb3d;
+  --color-accent-content: #000000db;
+  --color-brand-gold: #9b8439;
+  --btn-primary-bg: #352b18;
+  --btn-primary-content: #ffffff;
+  --btn-tertiary-bg: #ffffff;
+  --btn-tertiary-content: #352b18;
+
+  /* Shadow */
+  --shadow-action-basic: 0 1px 1px #0000000a;
+
+  /* Spacing — gap */
+  --gap-3xs: 2px;
+  --gap-2xs: 4px;
+  --gap-xs: 8px;
+  --gap-sm: 12px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+
+  /* Spacing — padding */
+  --pad-2xs: 4px;
+  --pad-xs: 8px;
+  --pad-sm: 12px;
+  --pad-md: 16px;
+  --pad-lg: 20px;
+  --pad-xl: 24px;
+  --pad-2xl: 32px;
+
+  /* Margins */
+  --margin-small: 20px;
+  --margin-comfortable: 24px;
+
+  /* Radius */
+  --radius-xl: 20px;
+  --radius-full: 1000px;
+
+  /* Sizes */
+  --viewport-width: 390px;
+  --viewport-height: 844px;
+  --btn-size-md: 40px;
+  --btn-size-lg: 48px;
+  --nav-action-size: 40px;
+  --icon-size: 24px;
+  --image-size-md: 40px;
+
+  /* Typography — families */
+  --font-heading: 'STIX Two Text', Georgia, serif;
+  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+
+  /* Typography — weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 600;
+}
+
+/* Typography utility classes (match Figma text styles) */
+.t-h1 { font: var(--fw-medium) 36px/44px var(--font-heading); letter-spacing: -1.62px; }
+.t-h3 { font: var(--fw-medium) 28px/36px var(--font-heading); letter-spacing: -0.98px; }
+.t-h4 { font: var(--fw-medium) 24px/32px var(--font-heading); letter-spacing: -0.86px; }
+.t-subheading { font: var(--fw-bold) 20px/28px var(--font-heading); letter-spacing: -0.67px; }
+.t-body { font: var(--fw-regular) 16px/24px var(--font-sans); letter-spacing: -0.37px; }
+.t-body-medium { font: var(--fw-medium) 16px/24px var(--font-sans); letter-spacing: -0.37px; }
+.t-body-sm { font: var(--fw-regular) 14px/20px var(--font-sans); letter-spacing: -0.33px; }
+.t-caption { font: var(--fw-regular) 12px/16px var(--font-sans); letter-spacing: -0.14px; }
+.t-label-sm { font: var(--fw-medium) 8px/12px var(--font-sans); }

@@ -1,0 +1,42 @@
+.phone-stage {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.phone-frame {
+  width: var(--viewport-width);
+  height: var(--viewport-height);
+  border-radius: 48px;
+  padding: 10px;
+  background: #111;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden auto;
+  border-radius: 38px;
+  background: var(--color-bg-canvas);
+}
+
+/* On real phones: drop the frame, go full-screen */
+@media (max-width: 500px) {
+  .phone-stage {
+    padding: 0;
+  }
+  .phone-frame {
+    width: 100%;
+    height: 100dvh;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .phone-screen {
+    border-radius: 0;
+  }
+}

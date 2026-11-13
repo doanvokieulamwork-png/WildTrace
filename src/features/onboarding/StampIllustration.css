@@ -1,0 +1,99 @@
+.stamp-illustration {
+  position: relative;
+  width: 350px;
+  height: 336px;
+  flex-shrink: 0;
+}
+.stamp-illustration__stamp-box {
+  position: absolute;
+  left: 50px;
+  top: 32px;
+  width: 174.23px;
+  height: 218.022px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stamp-illustration__moth {
+  position: absolute;
+  left: 64px;
+  top: 92px;
+  width: 299.027px;
+  height: 299.027px;
+  max-width: none;
+  object-fit: contain;
+}
+
+.stamp {
+  display: flex;
+  align-items: center;
+  flex: none;
+  transform: rotate(-14.78deg);
+}
+.stamp__side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.839px;
+  height: 191.251px;
+  flex-shrink: 0;
+}
+.stamp__side-inner { flex: none; width: 191.251px; overflow: clip; }
+.stamp__side-inner--left { transform: scaleY(-1) rotate(90deg); }
+.stamp__side-inner--right { transform: rotate(90deg); }
+.stamp__row { display: flex; align-items: center; justify-content: center; width: 100%; }
+.stamp__side-inner .stamp__row { justify-content: flex-start; }
+.stamp__scallop { flex-shrink: 0; }
+
+.stamp__middle {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  width: 114.045px;
+}
+.stamp__edge { overflow: clip; width: 100%; }
+.stamp__edge--bottom { transform: scaleY(-1); }
+.stamp__wrapper {
+  flex: 1 0 0;
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-golden-soft);
+}
+.stamp__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.135px;
+  width: 114.045px;
+  height: 100%;
+  padding: 4.703px;
+  border-radius: var(--radius-xs);
+  background: var(--color-bg-surface);
+}
+.stamp__insect {
+  position: relative;
+  flex: 1 0 0;
+  overflow: clip;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-surface-alt);
+}
+.stamp__base,
+.stamp__bug {
+  position: absolute;
+  max-width: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+.stamp__base { left: calc(50% + 1.14px); top: calc(50% + 3.51px); width: 125.41px; height: 125.41px; }
+.stamp__bug { left: calc(50% - 0.82px); top: calc(50% + 5.47px); width: 101.112px; height: 101.112px; }
+.stamp__info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0.784px 0;
+  font-family: var(--font-sans);
+  line-height: 19.581px;
+  color: var(--color-content-strongest);
+}
+.stamp__name { flex: 1 0 0; font-size: 14.685px; font-weight: var(--fw-bold); letter-spacing: -0.1713px; }
+.stamp__number { font-size: 12.238px; font-weight: var(--fw-medium); white-space: nowrap; }

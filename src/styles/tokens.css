@@ -1,6 +1,6 @@
 /*
  * Design tokens — mirrored from Figma variables
- * (Odd Side Good Vibe – Final Presentation, page "Test").
+ * (Odd Side Good Vibe (V1), file mZ4zszrGGodQVXIzVDxF2M).
  * Do NOT hardcode colors/spacing/typography in components; use these vars.
  * When Figma changes, update this file first.
  */
@@ -11,6 +11,11 @@
   --color-bg-neutral-subtle: #623e0215;
   --color-bg-neutral-flat: #ffffff00;
   --color-bg-dark: #352b18;
+  --color-bg-surface-alt: #f9f7f4;
+  --color-bg-golden-soft: #edca85;
+  --color-bg-brand-tint: #9b84390d;
+  --color-bg-status-bar: #f4f1eb;
+  --color-bg-image-scrim: #00000033;
 
   /* Color — content */
   --color-content-strongest: #352b18;
@@ -18,25 +23,31 @@
   --color-content-light: #2e1b0096;
   --color-content-placeholder: #3f260051;
   --color-content-disabled: #3f260051;
+  --color-content-ascii: #352b18;
   --color-content-inverse: #ffffff;
   --color-label-primary: #000000;
+  --color-content-inverse-base: #fff7ebd1;
+  --color-logo: #eac81a;
 
   /* Color — border */
   --color-border-subtle: #56330124;
   --color-border-active-subtle: #502e012d;
   --color-border-inverse: #ffffff;
+  --color-border-brand-subtle: #d5a80094;
 
   /* Color — brand / buttons */
   --color-accent: #ffdb3d;
   --color-accent-content: #000000db;
   --color-brand-gold: #9b8439;
   --btn-primary-bg: #352b18;
-  --btn-primary-content: #ffffff;
+  --btn-primary-content: #f8f5f0;
   --btn-tertiary-bg: #ffffff;
   --btn-tertiary-content: #352b18;
 
   /* Shadow */
   --shadow-action-basic: 0 1px 1px #0000000a;
+  --shadow-action-soft: 0 1px 0.5px #0000000a;
+  --shadow-nav-top: 0 -1px 0 #0000000a;
 
   /* Spacing — gap */
   --gap-3xs: 2px;
@@ -45,6 +56,7 @@
   --gap-sm: 12px;
   --gap-md: 16px;
   --gap-lg: 24px;
+  --gap-2xl: 40px;
 
   /* Spacing — padding */
   --pad-2xs: 4px;
@@ -60,7 +72,11 @@
   --margin-comfortable: 24px;
 
   /* Radius */
+  --radius-xs: 4.703px;
+  --radius-sm: 7.838px;
+  --radius-md: 12px;
   --radius-xl: 20px;
+  --radius-3xl: 28px;
   --radius-full: 1000px;
 
   /* Sizes */
@@ -71,10 +87,20 @@
   --nav-action-size: 40px;
   --icon-size: 24px;
   --image-size-md: 40px;
+  --icon-size-sm: 12px;
+  --icon-size-md: 16px;
+  --icon-size-lg: 20px;
+  --status-bar-height: 54px;
+  --home-indicator-width: 121px;
+  --home-indicator-height: 4px;
+  --tab-bar-height: 89px;
 
   /* Typography — families */
   --font-heading: 'STIX Two Text', Georgia, serif;
   --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --font-label: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-system: -apple-system, 'SF Pro Text', system-ui, sans-serif;
 
   /* Typography — weights */
   --fw-regular: 400;
@@ -84,11 +110,15 @@
 
 /* Typography utility classes (match Figma text styles) */
 .t-h1 { font: var(--fw-medium) 36px/44px var(--font-heading); letter-spacing: -1.62px; }
+.t-h2 { font: var(--fw-medium) 32px/40px var(--font-heading); letter-spacing: -1.1px; }
 .t-h3 { font: var(--fw-medium) 28px/36px var(--font-heading); letter-spacing: -0.98px; }
 .t-h4 { font: var(--fw-medium) 24px/32px var(--font-heading); letter-spacing: -0.86px; }
 .t-subheading { font: var(--fw-bold) 20px/28px var(--font-heading); letter-spacing: -0.67px; }
 .t-body { font: var(--fw-regular) 16px/24px var(--font-sans); letter-spacing: -0.37px; }
 .t-body-medium { font: var(--fw-medium) 16px/24px var(--font-sans); letter-spacing: -0.37px; }
+.t-button { font: var(--fw-bold) 16px/24px var(--font-sans); letter-spacing: -0.37px; }
 .t-body-sm { font: var(--fw-regular) 14px/20px var(--font-sans); letter-spacing: -0.33px; }
 .t-caption { font: var(--fw-regular) 12px/16px var(--font-sans); letter-spacing: -0.14px; }
-.t-label-sm { font: var(--fw-medium) 8px/12px var(--font-sans); }
+.t-label-sm { font: var(--fw-medium) 8px/12px var(--font-label); letter-spacing: 0; }
+.t-logo { font: var(--fw-medium) 60.8px/76px var(--font-heading); }
+.t-status-time { font: 590 17px/22px var(--font-system); }

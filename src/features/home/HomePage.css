@@ -1,0 +1,48 @@
+.home {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(var(--color-bg-brand-tint), var(--color-bg-brand-tint)), var(--color-bg-canvas);
+}
+.home__scroll {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding-bottom: var(--tab-bar-height);
+}
+.home__scroll::-webkit-scrollbar { display: none; }
+.home__status-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--color-bg-status-bar);
+}
+.home__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+  padding: var(--pad-xl) var(--margin-small) var(--pad-2xl);
+}
+.home__featured { display: flex; flex-direction: column; gap: var(--gap-md); }
+.home__section { display: flex; flex-direction: column; gap: var(--gap-sm); }
+.home__section--blogs { gap: var(--gap-md); }
+/* Horizontal sliders bleed to the screen edge like in Figma. */
+.home__slider {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-xs);
+  margin: 0 calc(-1 * var(--margin-small));
+  padding: 0 var(--margin-small);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--margin-small);
+  scrollbar-width: none;
+}
+.home__slider::-webkit-scrollbar { display: none; }
+.home__slider > * { scroll-snap-align: start; }
+.home__tab-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}

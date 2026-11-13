@@ -1,0 +1,12 @@
+.bottom-indicator {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--pad-md) var(--margin-comfortable) var(--pad-xs);
+}
+.bottom-indicator__bar {
+  width: var(--home-indicator-width);
+  height: var(--home-indicator-height);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-neutral-subtle);
+}

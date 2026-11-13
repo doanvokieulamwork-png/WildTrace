@@ -1,0 +1,20 @@
+.journey-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-surface);
+}
+.journey-card__content {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  padding: var(--pad-md) 0 var(--pad-md) var(--pad-md);
+}
+.journey-card__title { display: flex; flex-direction: column; }
+.journey-card__eyebrow,
+.journey-card__body { color: var(--color-content-base); }
+.journey-card__level { color: var(--color-content-strongest); }

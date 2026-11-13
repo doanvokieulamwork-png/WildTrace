@@ -1,0 +1,17 @@
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 80px;
+  height: var(--btn-size-lg);
+  padding: var(--pad-md);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-content);
+  box-shadow: var(--shadow-action-basic);
+  overflow: hidden;
+}
+.primary-button__label { padding: 0 var(--pad-2xs); white-space: nowrap; }
+.primary-button:active { opacity: 0.88; }

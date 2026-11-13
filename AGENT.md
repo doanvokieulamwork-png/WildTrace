@@ -22,9 +22,11 @@ unlocks achievements.
 
 ## 2. Design source
 
-- Figma: https://www.figma.com/design/YGQ6JigqO0ir3u7upacSXL/Odd-Side-Good-Vibe-Final-Presentation?node-id=2070-246
-- Page **"Test"** (node `2070:246`) contains the three flows below. Always open the
-  specific frame (node id in the tables) before building a screen.
+- Figma (current, V1): https://www.figma.com/design/mZ4zszrGGodQVXIzVDxF2M/Odd-Side-Good-Vibe--V1-?node-id=4022-17886
+  — Flow 1 + Home node ids (`4022:*`) are from this file.
+- Figma (older presentation file, still the source for flow2/flow3 ids `2070:*` until
+  they are re-mapped): https://www.figma.com/design/YGQ6JigqO0ir3u7upacSXL/Odd-Side-Good-Vibe-Final-Presentation?node-id=2070-246
+- Always open the specific frame (node id in the tables) before building a screen.
 - Pixel-match the design. If the design is ambiguous or missing a state (loading, error,
   empty), make a sensible choice and note it in the PR description — do not invent new
   visual styles.
@@ -45,17 +47,17 @@ All tokens from Figma variables live in `src/styles/tokens.css`.
 One branch per flow. Branch name = `feature/flowN`.
 
 ### flow1 — Onboarding → `feature/flow1`
-Figma section `Flow 1` (`2070:4258`). Route prefix `/onboarding`.
+Figma V1 section `4022:17886`. Route prefix `/onboarding`.
 
-| # | Screen | Figma node | Notes |
-|---|--------|-----------|-------|
-| 1 | Splash (dark, empty) | `2070:4466` | auto-advance |
-| 2 | Splash with logo "WildTrace — Discover Insects · Map Their World" | `2070:4474` | |
-| 3 | Onboarding 1 — "Tiny World in Plain Sight" | `2070:4259` | progress bar 1/3, Skip |
-| 4 | Onboarding 2 — "Build Your Collection" | `2070:4443` | progress 2/3 |
-| 5 | Onboarding 3 — "Your Discoveries Matter" | `2070:4286` | progress 3/3 |
-| 6 | Welcome to WildTrace (Sign-In/Done) | `2070:4426` | "Start Exploring" → Home |
-| 7 | Home | `2070:4309` | shared screen, see below |
+| # | Screen | Figma node | Route | Notes |
+|---|--------|-----------|-------|-------|
+| 1 | Splash (dark, empty) | `4022:18199` | `/onboarding` | auto-advance 0.9s |
+| 2 | Splash with "WildTrace" logo | `4022:18207` | `/onboarding/logo` | letter animation, auto-advance 2.8s |
+| 3 | Onboarding 1 — "Tiny World in Plain Sight" | `4022:17887` | `/onboarding/1` | progress 1/3, Skip → Welcome |
+| 4 | Onboarding 2 — "Build Your Collection" | `4022:18176` | `/onboarding/2` | progress 2/3 |
+| 5 | Onboarding 3 — "Your Discoveries Matter" | `4022:17914` | `/onboarding/3` | progress 3/3 |
+| 6 | Welcome to WildTrace | `4022:18159` | `/onboarding/welcome` | "Start Exploring" → Home |
+| 7 | Home | `4022:17937` | `/home` | shared screen, see below |
 
 ### Home (shared) — built in `feature/flow1`
 Route `/home`, folder `src/features/home/`. Greeting, Naturalist Journey card
@@ -128,7 +130,11 @@ Rules:
 - One component per file, `PascalCase.tsx`; CSS file with the same name next to it.
 - Named exports only. No `any`. Keep components small; extract hooks into `useX.ts`.
 - Assets: export from Figma as SVG (icons) or WebP/PNG @2x (photos) into
-  `src/assets/<flow>/`, kebab-case names.
+  `src/assets/<flow>/` (e.g. `src/assets/flow1/`; assets used by 2+ flows go in
+  `src/assets/shared/`), kebab-case names. Downscale large photos (`sips -Z 900`) —
+  keep the bundle small.
+- Shared components already available: `StatusBar`, `BottomIndicator`, `PrimaryButton`,
+  `ControlFooter` (in `src/components/`).
 
 ## 6. Git workflow
 
@@ -156,7 +162,7 @@ Pull requests:
 ## 7. Rules for AI agents
 
 1. Read this file first, every session.
-2. Work only on the branch for the flow you were asked to do. Check with `git branch --show-current` before editing.
+2. Work only on the branch for the flow you were asked to do. Check with `git branch --show-current` (or `git rev-parse --abbrev-ref HEAD` on older git) before editing.
 3. Before building a screen, fetch the Figma frame (node id above) for layout and copy. Use real copy from Figma, not lorem ipsum.
 4. Use tokens; never hardcode visual values.
 5. Do not add dependencies without saying why in the PR. Do not upgrade major versions.
